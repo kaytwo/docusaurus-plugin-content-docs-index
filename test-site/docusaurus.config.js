@@ -16,27 +16,10 @@ module.exports = {
         alt: "My Site Logo",
         src: "img/logo.svg",
       },
-      items: [
-        {
-          to: "docs/",
-          activeBasePath: "docs",
-          label: "Docs",
-          position: "left",
-        },
-      ],
     },
     footer: {
       style: "dark",
       links: [
-        {
-          title: "Docs",
-          items: [
-            {
-              label: "Getting Started",
-              to: "docs/",
-            },
-          ],
-        },
         {
           title: "Community",
           items: [
@@ -58,10 +41,6 @@ module.exports = {
           title: "More",
           items: [
             {
-              label: "Blog",
-              to: "blog",
-            },
-            {
               label: "GitHub",
               href: "https://github.com/facebook/docusaurus",
             },
@@ -73,7 +52,7 @@ module.exports = {
   },
   plugins: [
     [
-      "@docusaurus/plugin-content-docs",
+      "../plugin",
       {
         sidebarPath: require.resolve("./sidebars.js"),
         // Please change this to your repo.

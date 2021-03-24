@@ -15,16 +15,22 @@ function docsPluginEnhanced(...pluginArgs) {
 
       // Create your additional pages
       const { actions, content } = contentLoadedArgs[0];
-      const { addRoute } = actions;
+      const { addRoute, createData } = actions;
       const { loadedVersions } = content;
       const createCalendarProp = async (version) => {
-        return Object.keys(version)
+        const eventsPath = await createData(
+          'events.json',
+          JSON.stringify(contentLoadedArgs,null,2),
+        );
+        return eventsPath
+  
+  
       }
 
       await Promise.all(
         loadedVersions.map(async version => {
           addRoute({
-            path: version.versionPath + "/calendar",
+            path: version.versionPath + "calendar",
             exact: true,
             component: "@site/src/components/calendar", // Your component
             modules: {

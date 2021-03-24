@@ -1,5 +1,6 @@
 ---
 title: Create a Blog Post
+arbitrary: stuff
 ---
 
 This page will help you on how to create blog posts in Docusaurus.
